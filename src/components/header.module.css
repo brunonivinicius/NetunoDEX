@@ -1,0 +1,28 @@
+.headerContainer {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin:auto;
+}
+
+.headerLeftElements {
+  justify-content: flex-start;
+  font-size: .75rem;
+  color: #001342;
+  padding-right: 20px;
+}
+
+.headerRightElements {
+  margin-left: auto;
+}
+
+.headerContainer::after {
+  content: ""; /* Importante para gerar o elemento */
+  height: 1px; /* Espessura da linha */
+  background-color: #ACD6E2; /* Cor da linha */
+  width: 100%; /* Largura da linha */
+  position:absolute;
+  top: 35px;
+  left: 0;
+}

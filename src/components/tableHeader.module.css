@@ -1,0 +1,60 @@
+.container {
+  height: 75px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  background-color: #F3F7F8;
+  height: 35px;
+  width: 135px;
+  font-size: 14px;
+  color: #00315C;
+}
+
+.button:hover {
+  background-color: #ACD6E2;
+}
+
+.container::after {
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}
+
+.secondContainer {
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  color: #00315C;
+
+}
+
+.secondContainer::after {
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}

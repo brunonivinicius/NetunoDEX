@@ -1,28 +1,54 @@
 .headerContainer {
-  height: 35px;
+  height: 40px;
   display: flex;
   align-items: center;
   max-width: 1200px;
-  margin:auto;
+  margin: auto;
+  position: relative;
 }
 
-.headerLeftElements {
-  justify-content: flex-start;
-  font-size: .75rem;
+.headerLeftElements, .headerRightElements {
+  font-size: 0.75rem;
   color: #001342;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .headerRightElements {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.iconButton, .buttonRight {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.iconButton {
+  padding-right: 30px;
+}
+
+.buttonRight {
+  background-color: #8EC3CB;
+  border-radius: 5px;
+  height: 26px;
+  width: 64px;
+  margin-left: 20px;
 }
 
 .headerContainer::after {
-  content: ""; /* Importante para gerar o elemento */
-  height: 1px; /* Espessura da linha */
-  background-color: #ACD6E2; /* Cor da linha */
-  width: 100%; /* Largura da linha */
-  position:absolute;
-  top: 35px;
-  left: 0;
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 39px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}
+
+.MoonFilled, .CaretDownOutlined {
+  font-size: 16px;
 }

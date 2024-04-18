@@ -1,0 +1,42 @@
+.headerContainer {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.headerContainer::after {
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 59px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}
+
+.leftElements {
+  display: flex;
+  align-items: center;
+  gap: 40px
+}
+
+.titleLinks {
+  color: #00315C;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.input {
+  background-color: #DDF1F4;
+  border: #00315C;
+  height: 35px;
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+}

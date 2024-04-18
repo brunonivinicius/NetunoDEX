@@ -1,0 +1,25 @@
+.cryptoContainer {
+  margin: 1rem;
+  background-color: #F5F5F5;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  color: #00315C;
+}
+
+.cryptoContainer::after {
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}

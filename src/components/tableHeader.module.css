@@ -37,14 +37,26 @@
 
 .secondContainer {
   height: 75px;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(12, 90px);
+  grid-gap: 20px;
   align-items: center;
+  width: auto;
   max-width: 1200px;
   margin: auto;
   position: relative;
   color: #00315C;
+  font-weight: 500;
+}
 
+.firsttem {
+  grid-column: 1;  /* Ocupa a primeira coluna */
+  grid-row-start: 1;  /* Começa na primeira linha */
+}
+
+.seconditem {
+  grid-column: 1;  /* Ocupa a primeira coluna */
+  grid-row-end: -1;  /* Termina na última linha */
 }
 
 .secondContainer::after {

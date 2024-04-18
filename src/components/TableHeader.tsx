@@ -18,7 +18,9 @@ const TableHeader = () => {
         <button className={styles.button}>Categorias</button>
       </div>
       <div className={styles.secondContainer}>
-        <TableHead text="#" />
+        <div className={styles.firstItem}>Star</div>
+        <div className={styles.secondItem}>#</div>
+        <div>Logo</div>
         <TableHead text="Nome" />
         <TableHead text="Preço" />
         <TableHead text="1H" />
@@ -26,6 +28,7 @@ const TableHeader = () => {
         <TableHead text="7D" />
         <TableHead text="Cap. de Mercado" />
         <TableHead text="Volume (24h)" />
+        <div>Max</div>
         <TableHead text="Ultimos 7 dias" />
       </div>
     </>

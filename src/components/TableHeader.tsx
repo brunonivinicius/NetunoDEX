@@ -6,7 +6,7 @@ interface TableHeadElementProps {
 }
 
 const TableHead: React.FC<TableHeadElementProps> = ({ text }) => (
-  <div className={styles.headerLeftElements}>{text}</div>
+  <div>{text}</div>
 );
 
 const TableHeader = () => {
@@ -18,8 +18,7 @@ const TableHeader = () => {
         <button className={styles.button}>Categorias</button>
       </div>
       <div className={styles.secondContainer}>
-        <div className={styles.firstItem}>Star</div>
-        <div className={styles.secondItem}>#</div>
+        <div>#</div>
         <div>Logo</div>
         <TableHead text="Nome" />
         <TableHead text="Preço" />

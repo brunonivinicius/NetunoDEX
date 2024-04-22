@@ -1,6 +1,6 @@
+'use client';
 import React from 'react';
 import styles from './table.module.css';
-import data from '../data/data'; // Certifique-se de que a exportação de 'data' é compatível.
 
 interface Platform {
   id: number;
@@ -63,6 +63,7 @@ interface CriptoProps {
   market_cap: number;
   volume_24h: number;
   max_supply: number | null;
+  // iconUrl: string;
 }
 
 function formatMarketCap(value: number) {
@@ -88,10 +89,12 @@ const Cripto: React.FC<CriptoProps> = ({
   market_cap,
   volume_24h,
   max_supply,
+  // iconUrl,
 }) => {
   return (
     <div className={styles.cryptoContainer}>
       <p>{cmc_rank}</p>
+      <div>Logo</div>
       <p>
         {name} ({symbol})
       </p>
@@ -107,23 +110,40 @@ const Cripto: React.FC<CriptoProps> = ({
 };
 
 const Table: React.FC = () => {
+  const [data, setData] = React.useState<CryptoData[]>([]);
+
+  React.useEffect(() => {
+    async function fetchCoins() {
+      const response = await fetch(
+        `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${process.env.apiKey}`,
+      );
+      const json = (await response.json()) as CryptoData[];
+      setData(json);
+      console.log(json);
+    }
+    fetchCoins();
+  }, []);
+
   return (
     <section>
-      {data.map((ativo: CryptoData) => (
-        <Cripto
-          key={ativo.name}
-          cmc_rank={ativo.cmc_rank}
-          name={ativo.name}
-          symbol={ativo.symbol}
-          quote={ativo.quote}
-          percent_change_1h={ativo.quote.USD.percent_change_1h}
-          percent_change_24h={ativo.quote.USD.percent_change_24h}
-          percent_change_7d={ativo.quote.USD.percent_change_7d}
-          market_cap={ativo.quote.USD.market_cap}
-          volume_24h={ativo.quote.USD.volume_24h}
-          max_supply={ativo.max_supply}
-        />
-      ))}
+      {data.map((ativo: CryptoData) => {
+        return (
+          <Cripto
+            key={ativo.name}
+            cmc_rank={ativo.cmc_rank}
+            name={ativo.name}
+            symbol={ativo.symbol}
+            quote={ativo.quote}
+            percent_change_1h={ativo.quote.USD.percent_change_1h}
+            percent_change_24h={ativo.quote.USD.percent_change_24h}
+            percent_change_7d={ativo.quote.USD.percent_change_7d}
+            market_cap={ativo.quote.USD.market_cap}
+            volume_24h={ativo.quote.USD.volume_24h}
+            max_supply={ativo.max_supply}
+            // iconUrl={icon ? icon.icon : undefined}
+          />
+        );
+      })}
     </section>
   );
 };

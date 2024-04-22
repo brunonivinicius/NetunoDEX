@@ -38,7 +38,7 @@
 .secondContainer {
   height: 75px;
   display: grid;
-  grid-template-columns: repeat(12, 90px);
+  grid-template-columns: 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 0.75fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   align-items: center;
   width: auto;
@@ -49,14 +49,12 @@
   font-weight: 500;
 }
 
-.firsttem {
-  grid-column: 1;  /* Ocupa a primeira coluna */
-  grid-row-start: 1;  /* Começa na primeira linha */
+.firstItem {
+  grid-column-start: 1;  /* Ocupa a primeira coluna */
 }
 
 .seconditem {
-  grid-column: 1;  /* Ocupa a primeira coluna */
-  grid-row-end: -1;  /* Termina na última linha */
+  grid-column-start: 1/2;
 }
 
 .secondContainer::after {

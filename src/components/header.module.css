@@ -9,14 +9,21 @@
 
 .headerLeftElements, .headerRightElements {
   font-size: 0.75rem;
-  color: #001342;
-  padding-right: 30px;
+  color: #282A31;
+  padding-right: 2.5px;
 }
 
 .headerRightElements {
   margin-left: auto;
   display: flex;
   align-items: center;
+}
+
+.dataGlobal {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #001342;
+  padding-right: 27.5px;
 }
 
 .iconButton, .buttonRight {

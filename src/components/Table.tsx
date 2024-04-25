@@ -63,7 +63,11 @@ interface CriptoProps {
   market_cap: number;
   volume_24h: number;
   max_supply: number | null;
-  // iconUrl: string;
+  iconUrl: string;
+}
+
+function getClassForValue(value: any) {
+  return value < 0 ? styles.textNegative : styles.textNormal;
 }
 
 function formatMarketCap(value: number) {
@@ -89,22 +93,34 @@ const Cripto: React.FC<CriptoProps> = ({
   market_cap,
   volume_24h,
   max_supply,
-  // iconUrl,
+  iconUrl,
 }) => {
   return (
     <div className={styles.cryptoContainer}>
       <p>{cmc_rank}</p>
-      <div>Logo</div>
+      <img
+        src={iconUrl}
+        alt={`${name} logo`}
+        height={38}
+        width={38}
+        className={styles.img}
+      ></img>
       <p>
         {name} ({symbol})
       </p>
       <p>${quote.USD.price.toFixed(2)}</p>
-      <p>{percent_change_1h.toFixed(2)}%</p>
-      <p>{percent_change_24h.toFixed(2)}%</p>
-      <p>{percent_change_7d.toFixed(2)}%</p>
+      <p className={getClassForValue(percent_change_1h)}>
+        {percent_change_1h.toFixed(2)}%
+      </p>
+      <p className={getClassForValue(percent_change_24h)}>
+        {percent_change_24h.toFixed(2)}%
+      </p>
+      <p className={getClassForValue(percent_change_7d)}>
+        {percent_change_7d.toFixed(2)}%
+      </p>
       <p>{formatMarketCap(market_cap)}</p>
-      <p>{max_supply !== null ? formatMarketCap(max_supply) : ''}</p>
       <p>{formatMarketCap(volume_24h)}</p>
+      <p>{max_supply !== null ? formatMarketCap(max_supply) : ''}</p>
     </div>
   );
 };
@@ -113,15 +129,13 @@ const Table: React.FC = () => {
   const [data, setData] = React.useState<CryptoData[]>([]);
 
   React.useEffect(() => {
-    async function fetchCoins() {
-      const response = await fetch(
-        `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=${process.env.apiKey}`,
-      );
-      const json = (await response.json()) as CryptoData[];
-      setData(json);
-      console.log(json);
+    async function fetchData() {
+      // Ajuste o endpoint conforme a rota configurada no Next.js
+      const response = await fetch('/api/fetchData');
+      const result = await response.json();
+      setData(result.data.data);
     }
-    fetchCoins();
+    fetchData();
   }, []);
 
   return (
@@ -137,10 +151,10 @@ const Table: React.FC = () => {
             percent_change_1h={ativo.quote.USD.percent_change_1h}
             percent_change_24h={ativo.quote.USD.percent_change_24h}
             percent_change_7d={ativo.quote.USD.percent_change_7d}
-            market_cap={ativo.quote.USD.market_cap}
             volume_24h={ativo.quote.USD.volume_24h}
+            market_cap={ativo.quote.USD.market_cap}
             max_supply={ativo.max_supply}
-            // iconUrl={icon ? icon.icon : undefined}
+            iconUrl={`https://s2.coinmarketcap.com/static/img/coins/64x64/${ativo.id}.png`}
           />
         );
       })}

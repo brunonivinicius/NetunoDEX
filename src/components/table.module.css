@@ -12,14 +12,23 @@
   color: #00315C;
 }
 
+.textNormal {
+  color: green; /* ou outra cor padrão */
+}
+
+.textNegative {
+  color: red;
+}
+
 .cryptoContainer::after {
   content: "";
-  display: block; /* Garante que o pseudo-elemento é renderizado */
+  display: block; /* Garante que o pseudo-elemento é renderizado como um bloco */
   position: absolute;
   left: 50%; /* Centraliza o elemento na tela */
   transform: translateX(-50%); /* Ajusta precisamente a posição central */
   height: 1px;
-  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  width: 100%; /* Faz o elemento se estender até a largura do container */
+  max-width: 1200px; /* Define a largura máxima do elemento */
   background-color: #ACD6E2;
   top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }

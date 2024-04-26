@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import styles from './table.module.css';
+import Link from 'next/link';
 
 interface Platform {
   id: number;
@@ -96,32 +97,34 @@ const Cripto: React.FC<CriptoProps> = ({
   iconUrl,
 }) => {
   return (
-    <div className={styles.cryptoContainer}>
-      <p>{cmc_rank}</p>
-      <img
-        src={iconUrl}
-        alt={`${name} logo`}
-        height={38}
-        width={38}
-        className={styles.img}
-      ></img>
-      <p>
-        {name} ({symbol})
-      </p>
-      <p>${quote.USD.price.toFixed(2)}</p>
-      <p className={getClassForValue(percent_change_1h)}>
-        {percent_change_1h.toFixed(2)}%
-      </p>
-      <p className={getClassForValue(percent_change_24h)}>
-        {percent_change_24h.toFixed(2)}%
-      </p>
-      <p className={getClassForValue(percent_change_7d)}>
-        {percent_change_7d.toFixed(2)}%
-      </p>
-      <p>{formatMarketCap(market_cap)}</p>
-      <p>{formatMarketCap(volume_24h)}</p>
-      <p>{max_supply !== null ? formatMarketCap(max_supply) : ''}</p>
-    </div>
+    <Link href={`/cripto/${symbol}`}>
+      <div className={styles.cryptoContainer}>
+        <p>{cmc_rank}</p>
+        <img
+          src={iconUrl}
+          alt={`${name} logo`}
+          height={38}
+          width={38}
+          className={styles.img}
+        ></img>
+        <p>
+          {name} ({symbol})
+        </p>
+        <p>${quote.USD.price.toFixed(2)}</p>
+        <p className={getClassForValue(percent_change_1h)}>
+          {percent_change_1h.toFixed(2)}%
+        </p>
+        <p className={getClassForValue(percent_change_24h)}>
+          {percent_change_24h.toFixed(2)}%
+        </p>
+        <p className={getClassForValue(percent_change_7d)}>
+          {percent_change_7d.toFixed(2)}%
+        </p>
+        <p>{formatMarketCap(market_cap)}</p>
+        <p>{formatMarketCap(volume_24h)}</p>
+        <p>{max_supply !== null ? formatMarketCap(max_supply) : ''}</p>
+      </div>
+    </Link>
   );
 };
 

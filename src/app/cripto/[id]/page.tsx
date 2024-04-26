@@ -1,6 +1,7 @@
 'use client';
 import Header from '@/components/Header';
 import Header2 from '@/components/Header2';
+import Footer from '@/components/Footer';
 import React from 'react';
 import { useEffect } from 'react';
 import styles from './page.module.css';
@@ -40,6 +41,8 @@ interface Cryptocurrency {
   tags: string[];
   tagNames: string[];
   tagGroups: string[];
+  max_supply: number;
+  total_supply: number;
   urls: URLS;
   platform: string | null;
   dateAdded: string;
@@ -81,9 +84,25 @@ interface URLS {
   facebook: string[];
   explorer: string[];
   reddit: string[];
-  technicalDoc: string[];
-  sourceCode: string[];
+  technical_doc: string[];
+  source_code: string[];
   announcement: string[];
+}
+
+function formatMarketCap(value: number | null) {
+  if (value === null) {
+    return null;
+  }
+
+  if (value >= 1e12) {
+    return `${(value / 1e12).toFixed(2)} T`;
+  } else if (value >= 1e9) {
+    return `${(value / 1e9).toFixed(2)} B`;
+  } else if (value >= 1e6) {
+    return `${(value / 1e6).toFixed(2)} M`;
+  } else {
+    return `${value.toFixed(2)}`;
+  }
 }
 
 const CriptoPage = ({ params }: PageParams) => {
@@ -100,7 +119,7 @@ const CriptoPage = ({ params }: PageParams) => {
       const object: APIResponse = result.data;
       const cripto: Cryptocurrency = object.data[symbol][0];
       setCripto(cripto);
-      console.log(cripto);
+      // console.log(cripto);
     }
     fetchMetadata();
 
@@ -123,32 +142,74 @@ const CriptoPage = ({ params }: PageParams) => {
       <Header2 />
       <div className={styles.container}>
         <div className={styles.leftElements}>
-          <div>
+          <div className={styles.title}>
             <img
               src={cripto?.logo}
               alt={`${cripto?.symbol} logo`}
               height={64}
               width={64}
             ></img>
-            <h2>{cripto?.name}</h2>
-            <p>{cripto?.symbol}</p>
+            <div className={styles.nameContainer}>
+              <h2 className={styles.name}>{cripto?.name}</h2>
+              <p>{cripto?.symbol}</p>
+            </div>
           </div>
-          <h1>{criptoprice?.quote.USD.price}</h1>
-          <p>{criptoprice?.quote.USD.percent_change_24h}</p>
-          <p>Cap. de Mercado:</p>
-          <p>Volume (24h):</p>
-          <p>Fornecimento em circulação:</p>
-          <p>Fornecimento máximo: </p>
-          <p>Fornecimento máximo: </p>
-          <p>Links oficiais:</p>
-          <button>Site</button>
-          <button>Whitepaper</button>
-          <button>GitHub</button>
+          <div className={styles.priceContainer}>
+            <h1 className={styles.price}>
+              US$ {criptoprice && formatMarketCap(criptoprice.quote.USD.price)}
+            </h1>
+            <p>
+              {criptoprice &&
+                formatMarketCap(criptoprice.quote.USD.percent_change_24h)}
+            </p>
+          </div>
+          <div className={styles.subtitleContainer}>
+            <p className={styles.subtitle}>Cap. de Mercado:</p>
+            <p>
+              {criptoprice && formatMarketCap(criptoprice.quote.USD.market_cap)}
+            </p>
+          </div>
+          <div className={styles.subtitleContainer}>
+            <p className={styles.subtitle}>Volume (24h):</p>
+            <p>
+              {criptoprice && formatMarketCap(criptoprice.quote.USD.volume_24h)}
+            </p>
+          </div>
+          <div className={styles.subtitleContainer}>
+            <p className={styles.subtitle}>Fornecimento em circulação:</p>
+            <p>
+              {criptoprice && formatMarketCap(criptoprice.total_supply)}{' '}
+              {cripto?.symbol}
+            </p>
+          </div>
+          <div className={styles.subtitleContainer}>
+            <p className={styles.subtitle}>Fornecimento máximo: </p>
+            <p>
+              {criptoprice && formatMarketCap(criptoprice.max_supply)}{' '}
+              {cripto?.symbol}
+            </p>
+          </div>
+          <p className={styles.subtitle}>Links oficiais:</p>
+          <div className={styles.buttonContainer}>
+            <a href={cripto?.urls.website[0]}>
+              <button className={styles.button}>Site</button>
+            </a>
+            <a href={cripto?.urls.technical_doc[0]}>
+              <button className={styles.button}>Whitepaper</button>
+            </a>
+            <a href={cripto?.urls.source_code[0]}>
+              <button className={styles.button}>Github</button>
+            </a>
+            <a href={cripto?.urls.twitter[0]}>
+              <button className={styles.button}>X</button>
+            </a>
+          </div>
         </div>
         <div className={styles.rightElements}>
           <p>{cripto?.description}</p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

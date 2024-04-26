@@ -12,6 +12,10 @@
   color: #00315C;
 }
 
+.cryptoContainer:hover {
+  background-color:#ECF7F9
+}
+
 .textNormal {
   color: green; /* ou outra cor padrão */
 }

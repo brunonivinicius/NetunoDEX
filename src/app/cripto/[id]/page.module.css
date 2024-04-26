@@ -1,0 +1,96 @@
+.container {
+  display: grid;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: black
+}
+
+.leftElements {
+  grid-column-start: 1;
+  display: grid;
+  align-content: space-between;
+  gap: 10px;
+}
+
+.title {
+  display: flex;
+  gap: 15px;
+  align-items:center;
+  color: #00315C
+}
+
+.nameContainer {
+  display: flex;
+  align-items:baseline;
+  gap: 5px;
+}
+.name {
+  font-size: 36px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items:baseline;
+  gap: 10px;
+}
+
+.price {
+  color: #282A31;
+  font-size: 40px;
+}
+
+.subtitleContainer{
+  display: flex;
+  align-items:baseline;
+  gap: 5px;
+}
+
+.subtitle {
+  color: #00315C;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.rightElements {
+  grid-column-start: 2;
+  color: #00315C;
+  font-size: 20px;
+  padding-top: 76px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap:25px;
+}
+
+.button {
+  background-color: #8EC3CB;
+  padding: 10px 24px;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  color: #00315C;
+}
+
+.button:hover {
+  background-color: #ACD6E2;
+  cursor: pointer
+}
+
+.container::after {
+  content: "";
+  display: block; /* Garante que o pseudo-elemento é renderizado */
+  position: absolute;
+  left: 50%; /* Centraliza o elemento na tela */
+  transform: translateX(-50%); /* Ajusta precisamente a posição central */
+  height: 1px;
+  width: 100vw; /* Faz o elemento ter a largura da viewport */
+  background-color: #ACD6E2;
+  top: 435px; /* Posiciona o pseudo-elemento na parte inferior do container */
+}

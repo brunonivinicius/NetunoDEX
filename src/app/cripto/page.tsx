@@ -25,7 +25,7 @@ const Criptos = () => {
       <Header2 />
       <div className={styles.container}>
         {data &&
-          data.map((ativo) => {
+          data.map((ativo: any) => {
             return (
               <div key={ativo.id} className={styles.janela}>
                 {' '}

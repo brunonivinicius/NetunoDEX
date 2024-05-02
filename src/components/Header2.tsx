@@ -39,7 +39,9 @@ const Header2 = () => {
         <Link href="/cripto">
           <div className={styles.titleLinks}>Criptomoedas</div>
         </Link>
-        <div className={styles.titleLinks}>Swap</div>
+        <Link href="/swap">
+          <div className={styles.titleLinks}>Swap</div>
+        </Link>
         <div className={styles.titleLinks}>Informações</div>
       </div>
 

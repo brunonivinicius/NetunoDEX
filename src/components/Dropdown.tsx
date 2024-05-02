@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './dropdown.module.css';
+import Link from 'next/link';
 
 const Dropdown = ({ data, searchTerm }) => {
   const [visibleCount, setVisibleCount] = useState(10);
@@ -43,16 +44,18 @@ const Dropdown = ({ data, searchTerm }) => {
     >
       {filteredData.length > 0 ? (
         filteredData.slice(0, visibleCount).map((item) => (
-          <div key={item.id} className={styles.rows}>
-            <img
-              src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.id}.png`}
-              alt={item.name}
-              width={35}
-              height={35}
-            />
-            <p>{item.name}</p>
-            <p>{item.symbol}</p>
-          </div>
+          <Link href={`/cripto/${item.symbol}`}>
+            <div key={item.id} className={styles.rows}>
+              <img
+                src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${item.id}.png`}
+                alt={item.name}
+                width={35}
+                height={35}
+              />
+              <p>{item.name}</p>
+              <p>{item.symbol}</p>
+            </div>
+          </Link>
         ))
       ) : (
         <div className={styles.noResults}>Nenhum item encontrado.</div>

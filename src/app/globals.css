@@ -91,3 +91,49 @@ a {
   text-decoration: none;
 }
 
+.ant-popover-inner {
+  min-width: 260px !important;
+  min-height: 140px !important;
+  border: 1px solid #ACD6E2;
+  background-color: #F3F7F8 !important;
+  box-shadow: 12px 12px 30px 0 rgba(172, 214, 226, 0.15) !important;
+}
+
+.ant-popover-arrow {
+  visibility: hidden;
+}
+
+.ant-radio-group {
+  margin-top: 10px;
+}
+
+.ant-radio-button-wrapper {
+  background-color: #DDF1F4 !important;
+  color: #001342 !important;
+  font-weight: 500;
+  border-color: #ACD6E2 !important;
+}
+
+.ant-radio-button-wrapper-checked {
+  border-color: #ACD6E2 !important;
+  background-color: #ACD6E2 !important;
+}
+
+.ant-radio-button-wrapper-checked::before {
+  background-color: #F3F7F8 !important;
+}
+
+
+.ant-input {
+  background-color: white !important;
+  color: white !important;
+  border-width: 0px !important;
+  height: 96px !important;
+  margin-bottom: 5px;
+  font-size: 35px;
+  border-radius: 12px !important;
+}
+
+.ant-input::placeholder {
+  color: #5f6783 !important;
+}

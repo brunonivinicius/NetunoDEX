@@ -14,7 +14,6 @@ const Criptos = () => {
       const result = await response.json();
       const firstTenItems = result.data.data.slice(0, 500);
       setData(firstTenItems);
-      console.log(result);
     }
     fetchMap();
   }, []);

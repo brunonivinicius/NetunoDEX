@@ -21,7 +21,6 @@ const Header2 = () => {
   }, []);
 
   const handleInputChange = (event) => {
-    console.log(event);
     setSearchTerm(event.target.value);
   };
 

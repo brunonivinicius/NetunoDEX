@@ -33,11 +33,11 @@
 }
 
 .input {
-  background-color: #DDF1F4;
-  border: #00315C;
+  background-color: #F0F4F5;
+  border: none;
   height: 35px;
   width: 200px;
-  border-radius: 5px;
+  border-radius: 50px;
   padding: 10px;
 }
 

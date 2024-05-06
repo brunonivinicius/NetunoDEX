@@ -149,7 +149,7 @@ const Header: React.FC = () => {
         <CaretDownOutlined />
         <span>PT-BR</span>
       </div>
-      <button className={styles.buttonRight}>Entrar</button>
+      <button className={styles.buttonRight}>Conectar</button>
     </div>
   );
 };

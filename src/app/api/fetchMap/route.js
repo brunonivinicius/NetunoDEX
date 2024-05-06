@@ -4,6 +4,5 @@ export async function GET() {
     { cache: 'force-cache' },
   );
   const data = await res.json();
-
   return Response.json({ data });
 }

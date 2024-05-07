@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './table.module.css';
 import Link from 'next/link';
+import { LoadingOutlined } from '@ant-design/icons';
 
 interface Platform {
   id: number;
@@ -137,9 +138,14 @@ const Table: React.FC = () => {
       const response = await fetch('/api/fetchData');
       const result = await response.json();
       setData(result.data.data);
+      console.log(result.data.data);
     }
     fetchData();
   }, []);
+
+  if (!data) {
+    return <LoadingOutlined style={{ fontSize: '50px' }} />;
+  }
 
   return (
     <section>

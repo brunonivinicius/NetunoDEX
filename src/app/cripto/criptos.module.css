@@ -17,7 +17,7 @@
   flex-direction: column;  /* Organiza os elementos em coluna */
   align-items: center;  /* Centraliza os elementos horizontalmente */
   justify-content: center;  /* Centraliza os elementos verticalmente */
-  background-color: #F3F7F8;
+  background-color: #FAFAFA;
   box-shadow: 12px 12px 30px 0 rgba(172, 214, 226, 0.15);
   border-width: 1px;
   border-style: solid;

@@ -3,7 +3,7 @@
   background-color: #F5F5F5;
   height: 75px;
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 0.75fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr 0.75fr 1fr 1fr 1fr;
   grid-gap: 20px;
   align-items: center;
   max-width: 1200px;
@@ -13,7 +13,7 @@
 }
 
 .cryptoContainer:hover {
-  background-color:#ECF7F9
+  background-color:#FAFAFA
 }
 
 .textNormal {

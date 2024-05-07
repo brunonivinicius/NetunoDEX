@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { createContext, useContext, useState } from 'react';
 import styles from './tableHeader.module.css';
 
 interface TableHeadElementProps {
@@ -28,7 +29,6 @@ const TableHeader = () => {
         <TableHead text="Cap. de Mercado" />
         <TableHead text="Volume (24h)" />
         <div>Max</div>
-        <TableHead text="Ultimos 7 dias" />
       </div>
     </>
   );

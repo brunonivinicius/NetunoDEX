@@ -1,7 +1,7 @@
 .dropDownContainer {
   position: absolute;
   z-index: 9;
-  background-color: #F3F7F8;
+  background-color: #FAFAFA;
   border-color: #ACD6E2;
   border-width: 1px;
   border-style: solid;
@@ -22,5 +22,9 @@
   height: 50px;
   color: #00315C;
   border-bottom: 1px solid #ACD6E2; /* Corrige e aplica borda apenas na parte inferior */
+}
+
+.rows::hover {
+  background-color: #FAFAFA;
 }
 

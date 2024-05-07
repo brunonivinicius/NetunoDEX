@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './header.module.css';
 import { MoonFilled, CaretDownOutlined } from '@ant-design/icons';
+import { FloatButton } from 'antd';
 
 interface ApiResponse {
   status: Status;
@@ -121,7 +122,7 @@ const Header: React.FC = () => {
   }, []);
 
   if (!data) {
-    return <div className={styles.headerContainer}>Carregando...</div>;
+    return <FloatButton shape="square" badge={{ dot: true }} />;
   }
 
   return (

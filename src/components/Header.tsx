@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './header.module.css';
 import { MoonFilled, CaretDownOutlined } from '@ant-design/icons';
 import { FloatButton } from 'antd';
+import ToggleThemeButton from '@/components/ToggleThemeButton';
 
 interface ApiResponse {
   status: Status;
@@ -144,9 +145,7 @@ const Header: React.FC = () => {
       <p className={styles.dataGlobal}>ETH: {data.eth_dominance.toFixed(2)}%</p>
       <HeaderElement text="Gás:" />
       <div className={styles.headerRightElements}>
-        <button className={styles.iconButton}>
-          <MoonFilled />
-        </button>
+        <ToggleThemeButton />
         <CaretDownOutlined />
         <span>PT-BR</span>
       </div>

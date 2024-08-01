@@ -16,24 +16,31 @@
   transform: translateX(-50%); /* Ajusta precisamente a posição central */
   height: 1px;
   width: 100vw; /* Faz o elemento ter a largura da viewport */
-  background-color: #ACD6E2;
+  background-color: var(--bg-300);
   top: 59px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }
 
 .leftElements {
   display: flex;
   align-items: center;
-  gap: 40px
+  gap: 40px;
 }
 
 .titleLinks {
-  color: #00315C;
+  font-family: var(--font-roboto);
   font-weight: 500;
-  font-size: 16px;
+  font-style: normal;
+  font-size: 18px;
+  /* Adicione uma cor adequada aqui, por exemplo: */
+  color: var(--text-200);
+}
+
+.titleLinks:hover {
+  color: var(--accent-200); /* Muda para azul no hover */
 }
 
 .input {
-  background-color: #F0F4F5;
+  background-color: #f0f4f5;
   border: none;
   height: 35px;
   width: 200px;

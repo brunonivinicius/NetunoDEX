@@ -12,15 +12,15 @@
 .button {
   border: none;
   border-radius: 5px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   height: 35px;
   width: 135px;
   font-size: 14px;
-  color: #00315C;
+  color: #00315c;
 }
 
 .button:hover {
-  background-color: #ACD6E2;
+  background-color: #acd6e2;
 }
 
 .container::after {
@@ -32,7 +32,7 @@
   height: 1px;
   width: 100%; /* Faz o elemento se estender até a largura do container */
   max-width: 1200px; /* Define a largura máxima do elemento */
-  background-color: #ACD6E2;
+  background-color: var(--bg-300);
   top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }
 
@@ -46,12 +46,12 @@
   max-width: 1200px;
   margin: auto;
   position: relative;
-  color: #00315C;
+  color: #00315c;
   font-weight: 500;
 }
 
 .firstItem {
-  grid-column-start: 1;  /* Ocupa a primeira coluna */
+  grid-column-start: 1; /* Ocupa a primeira coluna */
 }
 
 .seconditem {
@@ -67,6 +67,6 @@
   height: 1px;
   width: 100%; /* Faz o elemento se estender até a largura do container */
   max-width: 1200px; /* Define a largura máxima do elemento */
-  background-color: #ACD6E2;
+  background-color: var(--bg-300);
   top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }

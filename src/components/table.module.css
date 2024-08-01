@@ -1,6 +1,5 @@
 .cryptoContainer {
   margin: 1rem;
-  background-color: #F5F5F5;
   height: 75px;
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr 0.75fr 1fr 1fr 1fr;
@@ -9,11 +8,11 @@
   max-width: 1200px;
   margin: auto;
   position: relative;
-  color: #00315C;
+  color: #00315c;
 }
 
 .cryptoContainer:hover {
-  background-color:#FAFAFA
+  background-color: var(--bg-200);
 }
 
 .textNormal {
@@ -33,7 +32,7 @@
   height: 1px;
   width: 100%; /* Faz o elemento se estender até a largura do container */
   max-width: 1200px; /* Define a largura máxima do elemento */
-  background-color: #ACD6E2;
+  background-color: var(--bg-300);
   top: 74px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }
 

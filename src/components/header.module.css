@@ -7,9 +7,10 @@
   position: relative;
 }
 
-.headerLeftElements, .headerRightElements {
+.headerLeftElements,
+.headerRightElements {
   font-size: 0.75rem;
-  color: #282A31;
+  color: var(--text-100);
   padding-right: 2.5px;
 }
 
@@ -22,11 +23,12 @@
 .dataGlobal {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #001342;
+  color: var(--text-100);
   padding-right: 27.5px;
 }
 
-.iconButton, .buttonRight {
+.iconButton,
+.buttonRight {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -37,7 +39,7 @@
 }
 
 .buttonRight {
-  background-color: #E2F5F9;
+  background-color: var(--primary-200);
   border-radius: 50px;
   height: 30px;
   width: 80px;
@@ -52,10 +54,11 @@
   transform: translateX(-50%); /* Ajusta precisamente a posição central */
   height: 1px;
   width: 100vw; /* Faz o elemento ter a largura da viewport */
-  background-color: #ACD6E2;
+  background-color: var(--bg-300);
   top: 39px; /* Posiciona o pseudo-elemento na parte inferior do container */
 }
 
-.MoonFilled, .CaretDownOutlined {
+.MoonFilled,
+.CaretDownOutlined {
   font-size: 16px;
 }

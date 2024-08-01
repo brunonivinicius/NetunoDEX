@@ -7,15 +7,15 @@
   margin-bottom: 100px;
 }
 
-.title{
-  color: #001342;
+.title {
+  color: var(--text-100);
   font-size: 24px;
   font-weight: 500;
   max-width: 1200px;
   margin: 30px auto;
 }
 
-.titleGrade{
+.titleGrade {
   color: #001342;
   font-size: 18px;
   font-weight: 500;
@@ -24,13 +24,11 @@
 
 .janela {
   display: block;
-  width: 420px; 
+  width: 420px;
   height: 260px;
-  background-color: #FAFAFA;
-  box-shadow: 12px 12px 30px 0 rgba(172, 214, 226, 0.15);
+  background-color: var(--bg-200);
   border-width: 1px;
-  border-style: solid; 
-  border-color: #ACD6E2;
+  border-color: #acd6e2;
   border-radius: 15px;
 }
 
@@ -38,10 +36,10 @@
   font-size: 14px;
   display: grid;
   position: relative;
-  color: #00315C;
+  color: #00315c;
   padding: 40px;
   grid-template-columns: 1fr 1fr 1fr;
-  GAP: 20px;
+  gap: 20px;
 }
 
 .desc {
@@ -55,4 +53,3 @@
   grid-column-start: 3;
   font-size: 14px;
 }
-
